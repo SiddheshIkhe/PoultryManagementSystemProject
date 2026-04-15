@@ -14,7 +14,7 @@ import java.util.Optional;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
+@Table(name = "userTable")
 public class User {
 
     @Id
