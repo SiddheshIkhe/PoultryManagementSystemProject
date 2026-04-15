@@ -24,6 +24,7 @@ async function addExpense() {
         alert("Error adding expense");
     }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("getExpenseBtn");
     if (btn) btn.addEventListener("click", getExpense);
