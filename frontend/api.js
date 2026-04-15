@@ -1,0 +1,1 @@
+const BASE_URL = "https://poultrymanagementsystemproject.onrender.com/api";
