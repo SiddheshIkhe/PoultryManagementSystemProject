@@ -1,4 +1,4 @@
-const BASE_URL = "https://poultrymanagementsystemproject.onrender.com";
+const BASE_URL = "https://poultrymanagementsystemproject.onrender.com/api";
 
 // ================= LOGIN =================
 async function login() {

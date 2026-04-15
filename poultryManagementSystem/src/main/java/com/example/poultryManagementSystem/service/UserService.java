@@ -24,17 +24,23 @@ public class UserService {
 
 
 // ✅ CREATE USER
- public User createUser(Long farmId, User user) {
-     Farm farm = farmRepository.findById(farmId)
-        .orElseThrow(() -> new RuntimeException("Farm not found"));
-     user.setFarm(farm);
-     return userRepository.save(user);
- }
+public User createUser(Long farmId, User user) {
+
+    Farm farm = farmRepository.findById(farmId)
+            .orElseThrow(() -> new RuntimeException("Farm not found with id: " + farmId));
+
+    user.setFarm(farm);
+
+    // encode password BEFORE saving
+    user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+    return userRepository.save(user);
+}
 // ✅ LOGIN USER
  public LoginResponse login(String username, String password) {
      User user = userRepository.findByUsername(username)
         .orElseThrow(() -> new RuntimeException("User not found"));
-     if (!user.getPassword().equals(password)) {
+     if (!passwordEncoder.matches(password, user.getPassword())) {
          throw new RuntimeException("Invalid password");
      }
      LoginResponse res = new LoginResponse();
