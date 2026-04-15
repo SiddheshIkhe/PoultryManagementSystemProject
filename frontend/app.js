@@ -406,7 +406,7 @@ async function getSales() {
                     <td>${d.date}</td>
                     <td>${d.numberOfTrays ?? 0}</td>   <!-- ✅ FIX -->
                     <td>${d.rate ?? 0}</td>
-                    <td>${d.totalAmount ?? (d.numberOfTrays * d.rate)}</td>
+                    <td>${d.totalAmount ?? (d.numberOfTrays * d.rate *30)}</td>
                     <td>${d.paymentMethod ?? "-"}</td>
                 </tr>
             `;
@@ -587,11 +587,10 @@ async function getVaccination() {
 //         window.location.href = "index.html";
 //     }
 // };
+document.getElementById("logoutBtn").addEventListener("click", logout);
 function logout() {
-    if (confirm("Are you sure you want to logout?")) {
-        localStorage.clear();
-        window.location.href = "index.html";
-    }
+    localStorage.clear();
+    window.location.href = "index.html";
 }
 window.onload = function () {
     const role = localStorage.getItem("role");
