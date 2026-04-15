@@ -42,7 +42,6 @@ async function login() {
 }
 
 // ================= FARM =================
-document.getElementById("createFarmBtn")?.addEventListener("click", createFarm);
 async function createFarm() {
     try {
         const loc = document.getElementById("location").value;
