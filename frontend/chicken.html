@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChickenStock</title>
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+        }
+
+        main {
+            display: grid;
+            justify-content: center;
+
+        }
+
+        .chickeninput {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Chicken Stock</h2>
+    </header>
+    <main>
+        <section class="homeBotton">
+            <a href="dashboard.html">home</a>
+        </section>
+        <section class="chickeninput">
+            <div class="heading">
+                <h3>Add Chicken Stock Data</h3>
+            </div>
+            <div class="input">
+                <input type="date" id="date">
+
+                <input type="number" id="totalBirds" placeholder="Total Birds">
+
+                <input type="number" id="mortality" placeholder="Mortality">
+                <div class="button">
+                    <button onclick="addChicken()">Add</button>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

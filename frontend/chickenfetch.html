@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Stock Record</title>
+</head>
+<body>
+    <section class="homeBotton">
+            <a href="dashboard.html">home</a>
+        </section>
+    <section class="chickenoutput">
+            <div class="heading">
+                <h3> Chicken Stock Records - Date Wise</h3>
+            </div>
+            <div class="output">
+                <input type="date" id="from">
+                <input type="date" id="to">
+                <div class="button">
+                    <button onclick="getChicken()">Fetch</button>
+                </div>
+            </div>
+        </section>
+        <section class="chickentable">
+            <table id="chickenTable"></table>
+        </section>
+    <script src="app.js"></script>
+</body>
+</html>

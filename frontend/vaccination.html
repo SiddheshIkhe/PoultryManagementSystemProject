@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination</title>
+</head>
+
+<body>
+    <header>
+        <h2>Vaccination</h2>
+    </header>
+    <main>
+        <div class="back">
+            <a href="dashboard.html">home</a>
+        </div>
+        <div class="vacciinput">
+            <input type="date" id="vDate"><br><br>
+            <input type="text" id="vaccineName" placeholder="Vaccine Name"><br><br>
+            <input type="number" id="age" placeholder="Age of Birds"><br><br>
+            <input type="number" id="birdsVac" placeholder="Total Birds Vaccinated"><br><br>
+            <input type="text" id="batch" placeholder="Batch Number"><br><br>
+            <input type="date" id="nextDue"><br><br>
+            <input type="number" id="cost" placeholder="Cost"><br><br>
+            <input type="text" id="admin" placeholder="Administered By"><br><br>
+            <input type="text" id="remark" placeholder="Remark"><br><br>
+
+            <button onclick="addVaccination()">Add Vaccination</button>
+        </div>
+        
+    </main>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

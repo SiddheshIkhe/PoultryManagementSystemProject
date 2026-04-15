@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: url("vaccination.jpeg") no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main {
+            width: 900px;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        header {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header h2 {
+            color: white;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .back {
+            margin-bottom: 10px;
+        }
+
+        .back a {
+            text-decoration: none;
+            color: #e53935;
+            font-weight: 500;
+        }
+
+        /* 🔴 FIXED HEADING */
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #b71c1c;
+            background: white;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .title::before,
+        .title::after {
+            content: "";
+            display: inline-block;
+            width: 60px;
+            height: 2px;
+            background: #e53935;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        /* Grid Form */
+        .vacciinput {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input {
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            background: white;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #e53935;
+            box-shadow: 0 0 6px rgba(229,57,53,0.3);
+        }
+
+        .vacciinput button {
+            grid-column: span 2;
+        }
+
+        button {
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #ff4d4d, #e53935);
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 6px 20px rgba(229,57,53,0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #e53935, #c62828);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Vaccination</h2>
+    </header>
+
+    <main>
+
+        <div class="back">
+            <a href="dashboard.html">Home</a>
+        </div>
+
+        <!-- TITLE -->
+        <div class="title">Add Vaccination Details</div>
+
+        <!-- INPUT -->
+        <div class="vacciinput">
+
+            <div class="form-group">
+                <label>Date of Vaccination</label>
+                <input type="date" id="vDate">
+            </div>
+
+            <div class="form-group">
+                <label>Vaccine Name</label>
+                <input type="text" id="vaccineName">
+            </div>
+
+            <div class="form-group">
+                <label>Age of Birds (days)</label>
+                <input type="number" id="age">
+            </div>
+
+            <div class="form-group">
+                <label>Total Birds Vaccinated</label>
+                <input type="number" id="birdsVac">
+            </div>
+
+            <div class="form-group">
+                <label>Medicine Batch No</label>
+                <input type="text" id="batch">
+            </div>
+
+            <div class="form-group">
+                <label>Next Due Date</label>
+                <input type="date" id="nextDue">
+            </div>
+
+            <div class="form-group">
+                <label>Cost (₹)</label>
+                <input type="number" id="cost">
+            </div>
+
+            <div class="form-group">
+                <label>Administered By</label>
+                <input type="text" id="admin">
+            </div>
+
+            <div class="form-group" style="grid-column: span 2;">
+                <label>Notes / Remarks</label>
+                <input type="text" id="remark">
+            </div>
+
+            <button onclick="addVaccination()">Add Vaccination Record</button>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

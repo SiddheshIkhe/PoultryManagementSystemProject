@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Records</title>
+</head>
+<body>
+    <h2>Expense Records - Date Wise</h2>
+    <section class="homeBotton">
+            <a href="dashboard.html">home</a>
+        </section>
+    <div class="expenseoutput">
+            <input type="date" id="dFrom">
+            <input type="date" id="dTo">
+            <button onclick="getExpense()">Fetch</button>
+
+            <table id="expenseTable"></table>
+        </div>
+    <script src="app.js"></script>
+</body>
+</html>

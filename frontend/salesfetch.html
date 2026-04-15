@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Record</title>
+</head>
+<body>
+<h2>Sales Data - Date Wise</h2>
+<section class="homeBotton">
+            <a href="dashboard.html">home</a>
+        </section>
+    <div class="salesoutput">
+            <input type="date" id="sFrom">
+            <input type="date" id="sTo">
+            <button onclick="getSales()">Fetch</button>
+        </div>
+        <div class="salestable">
+            <table id="salesTable"></table>
+        </div>
+        <script src="app.js"></script>
+</body>
+</html>
