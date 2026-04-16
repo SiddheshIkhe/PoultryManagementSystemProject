@@ -1,0 +1,1 @@
+web: cd poultryManagementSystem && ./mvnw spring-boot:run
