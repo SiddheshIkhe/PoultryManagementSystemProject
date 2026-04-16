@@ -21,6 +21,9 @@ public class FarmService {
 
     // ✅ CREATE FARM + ASSIGN TO LOGGED-IN USER
     public Farm saveFarm(Farm farm) {
+        if (farmRepo.existsByName(farm.getName())) {
+            throw new RuntimeException("Farm already exists");
+        }
         return farmRepo.save(farm);
     }
 

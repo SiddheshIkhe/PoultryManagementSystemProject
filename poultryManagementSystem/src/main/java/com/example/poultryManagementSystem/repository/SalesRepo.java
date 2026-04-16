@@ -14,5 +14,5 @@ public interface SalesRepo extends JpaRepository<Sales, Long> {
     // ✅ OLD (farmId)
     List<Sales> findByFarm_Id(Long farmId);
     List<Sales> findByFarm_IdAndDateBetween(Long farmId, LocalDate from, LocalDate to);
-
+    boolean existsByFarm_IdAndDate(Long farmId, LocalDate date);
 }

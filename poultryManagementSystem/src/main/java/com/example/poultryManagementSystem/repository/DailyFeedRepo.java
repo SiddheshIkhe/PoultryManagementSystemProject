@@ -15,5 +15,6 @@ public interface DailyFeedRepo extends JpaRepository<DailyFeed, Long> {
     List<DailyFeed> findByFarm_Id(Long farmId);
     List<DailyFeed> findByFarm_IdAndDateBetween(Long farmId, LocalDate from, LocalDate to);
 
+    boolean existsByFarm_IdAndDate(Long farmId, LocalDate date);
 
 }

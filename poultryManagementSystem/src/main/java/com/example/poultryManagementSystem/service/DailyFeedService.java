@@ -21,6 +21,12 @@ public class DailyFeedService {
     }
 
     public DailyFeed save(DailyFeed dailyFeed) {
+        if (dailyFeedRepo.existsByFarm_IdAndDate(
+                dailyFeed.getFarm().getId(),
+                dailyFeed.getDate()
+        )) {
+            throw new RuntimeException("Duplicate entry");
+        }
         return dailyFeedRepo.save(dailyFeed);
     }
     // ✅ OLD API (keep working)

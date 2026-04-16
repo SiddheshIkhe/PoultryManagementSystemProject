@@ -15,5 +15,6 @@ public interface DailyExpenseRepo extends JpaRepository<DailyExpense, Long> {
     List<DailyExpense> findByFarm_Id(Long farmId);
     List<DailyExpense> findByFarm_IdAndDateBetween(Long farmId, LocalDate from, LocalDate to);
 
+    boolean existsByFarm_IdAndDate(Long farmId, LocalDate date);
 
 }

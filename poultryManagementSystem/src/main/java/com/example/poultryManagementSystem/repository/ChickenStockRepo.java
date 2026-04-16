@@ -18,6 +18,6 @@ public interface ChickenStockRepo extends JpaRepository<ChickenStock, Long> {
 
     List<ChickenStock> findByFarm_IdAndDateBetween(Long farmId, LocalDate from, LocalDate to);
 
-
+    boolean existsByFarm_IdAndDate(Long farmId, LocalDate date);
 
 }

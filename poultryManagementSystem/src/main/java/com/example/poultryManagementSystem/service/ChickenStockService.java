@@ -20,6 +20,12 @@ public class ChickenStockService {
     }
 
     public ChickenStock save(ChickenStock chickenStock) {
+        if (chickenStockRepo.existsByFarm_IdAndDate(
+                chickenStock.getFarm().getId(),
+                chickenStock.getDate()
+        )) {
+            throw new RuntimeException("Duplicate entry");
+        }
         return chickenStockRepo.save(chickenStock);
     }
     // ✅ OLD API (keep it working)

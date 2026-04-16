@@ -21,7 +21,12 @@ public class EggProductionService {
 
     // ✅ UPDATED SAVE (JWT + fallback)
     public EggProduction save(EggProduction eggProduction) {
-
+        if (eggProductionRepo.existsByFarm_IdAndDate(
+                eggProduction.getFarm().getId(),
+                eggProduction.getDate()
+        )) {
+            throw new RuntimeException("Duplicate entry");
+        }
         return eggProductionRepo.save(eggProduction);
     }
 

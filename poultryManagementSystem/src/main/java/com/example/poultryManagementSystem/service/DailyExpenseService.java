@@ -15,6 +15,12 @@ public class DailyExpenseService {
     private final DailyExpenseRepo dailyExpenseRepo;
 
     public DailyExpense save(DailyExpense dailyExpense) {
+        if (dailyExpenseRepo.existsByFarm_IdAndDate(
+                dailyExpense.getFarm().getId(),
+                dailyExpense.getDate()
+        )) {
+            throw new RuntimeException("Duplicate entry");
+        }
         return dailyExpenseRepo.save(dailyExpense);
     }
 

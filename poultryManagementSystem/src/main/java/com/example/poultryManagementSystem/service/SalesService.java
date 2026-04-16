@@ -24,7 +24,12 @@ public class SalesService {
 
     // ✅ UPDATED SAVE (JWT + fallback)
     public Sales save(Sales sales) {
-
+        if (salesRepo.existsByFarm_IdAndDate(
+                sales.getFarm().getId(),
+                sales.getDate()
+        )) {
+            throw new RuntimeException("Duplicate entry");
+        }
         return salesRepo.save(sales);
     }
 

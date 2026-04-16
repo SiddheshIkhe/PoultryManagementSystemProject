@@ -20,7 +20,12 @@ public class VaccinationService {
 
     // ✅ UPDATED SAVE (JWT + fallback)
     public Vaccination save(Vaccination vaccination) {
-
+        if (vaccinationRepo.existsByFarm_IdAndDate(
+                vaccination.getFarm().getId(),
+                vaccination.getDate()
+        )) {
+            throw new RuntimeException("Duplicate entry");
+        }
         return vaccinationRepo.save(vaccination);
     }
 

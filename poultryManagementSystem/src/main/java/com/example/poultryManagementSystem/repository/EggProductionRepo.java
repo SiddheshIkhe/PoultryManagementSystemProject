@@ -14,5 +14,5 @@ public interface EggProductionRepo extends JpaRepository<EggProduction, Long> {
     // ✅ OLD (farmId)
     List<EggProduction> findByFarm_Id(Long farmId);
     List<EggProduction> findByFarm_IdAndDateBetween(Long farmId, LocalDate from, LocalDate to);
-
+    boolean existsByFarm_IdAndDate(Long farmId, LocalDate date);
 }

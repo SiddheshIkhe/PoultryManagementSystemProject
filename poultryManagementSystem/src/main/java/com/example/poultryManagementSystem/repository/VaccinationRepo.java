@@ -14,5 +14,5 @@ public interface VaccinationRepo extends JpaRepository<Vaccination, Long> {
     // ✅ OLD (farmId)
     List<Vaccination> findByFarm_Id(Long farmId);
     List<Vaccination> findByFarm_IdAndDateBetween(Long farmId, LocalDate from, LocalDate to);
-
+    boolean existsByFarm_IdAndDate(Long farmId, LocalDate date);
 }
