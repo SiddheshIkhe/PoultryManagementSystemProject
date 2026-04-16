@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["maven", "jdk17"]
+
+[phases.build]
+cmds = ["cd poultryManagementSystem && mvn clean package"]
+
+[start]
+cmd = "cd poultryManagementSystem && java -jar target/*.jar"
